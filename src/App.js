@@ -15,8 +15,8 @@ const App = () => {
           <Route exact path='/' component={ListOfArticles}></Route>
           <Route exact path='/write-article' component={WriteArticle}></Route>
           <Route exact path='/review-articles' component={ListOfUnpublishedArticles}></Route>
-          <Route exact path='/review-article' component={ReviewArticle}></Route>
-          <Route exact path='/full-article' component={FullArticle}></Route>
+          <Route exact path='/review-article/:id' component={ReviewArticle}></Route>
+          <Route exact path='/full-article/:id' component={FullArticle}></Route>
         </Switch>
     </>
   );
