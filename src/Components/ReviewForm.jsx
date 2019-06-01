@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Button, Form, Dropdown } from 'semantic-ui-react'
+import { Button, Form, Dropdown, Container } from 'semantic-ui-react'
 
 class ReviewForm extends Component {
   state = {
-    score: ''
+    id: '',
+    score: '',
+    comment: ''
   }
 
   handleChangeScore = (e, { value }) => {
@@ -14,6 +16,26 @@ class ReviewForm extends Component {
     this.setState({
       [e.target.id]: e.target.value
     })
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    const path = `/api/v1/articles/${article.id}/reviews`
+    const payload = { ...this.state }
+    axios.post(path, payload)
+      .then(response => {
+        console.log(response)
+        this.setState({
+          redirect: true,
+          id: response.data.article_id
+        })
+      })
+      .catch(error => {
+        this.setState({
+          redirect: false,
+          errors: error.response.data.error
+        })
+      })
   }
 
   render() {
@@ -32,26 +54,32 @@ class ReviewForm extends Component {
 
     return (
       <>
-        <Form>
-          <Dropdown
-            clearable
-            search
-            selection
-            placeholder="Select Score"
-            options={options}
-            id="score_select"
-            onChange={this.handleChangeScore}
-          />
+        <Container>
+          <Grid centered columns={2}>
+            <Grid.Column width={11}>
+              <Form type="medium" id="review-article" onSubmit={this.onSubmit}>
+                <Dropdown
+                  clearable
+                  search
+                  selection
+                  placeholder="Select Score"
+                  options={options}
+                  id="score_select"
+                  onChange={this.handleChangeScore}
+                />
 
-          <Form.Input
-            id="comment"
-            value={this.state.comment}
-            onChange={this.onChangeHandler}
-            placeholder="Comment"
-          />
+                <Form.Input
+                  id="comment"
+                  value={this.state.comment}
+                  onChange={this.onChangeHandler}
+                  placeholder="Comment"
+                />
 
-          <Button id="create_review">Send Review</Button>
-        </Form>
+                <Button id="create_review">Send Review</Button>
+              </Form>
+            </Grid.Column>
+          </Grid>
+        </Container>
       </>
     )
   }
