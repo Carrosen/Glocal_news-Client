@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Form, Container, Button, Message, Dropdown } from 'semantic-ui-react'
-import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { COUNTRY_OPTIONS } from './countriesData.js'
 
@@ -68,13 +67,15 @@ class WriteArticle extends Component {
     })
 
     if (this.state.redirect === true) {
-      return <Redirect to={{
-        pathname: '/full-article',
-        state: {
-          id: this.state.id,
-          message: true
-        }
-      }} />
+      // return <Redirect to={{
+      //   pathname: '/full-article',
+      //   state: {
+      //     id: this.state.id,
+      //     message: true
+      //   }
+      // }} />
+
+      this.props.history.push('/full-article')
     } else if (this.state.redirect === false) {
       message = (
         <>
