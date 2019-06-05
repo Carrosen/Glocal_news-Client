@@ -11,7 +11,7 @@ describe('Visitor can navigate the website', () => {
   })
 
   it("by seeing a navbar with site title, article -and review actions", () => {
-    let mainLabels = ["GLOCAL NEWS", "Write An Article", "Review Articles"]
+    let mainLabels = ["GL", "CAL NEWS", "Write An Article", "Review Articles"]
 
     mainLabels.forEach(function (label) {
       cy.contains(label)

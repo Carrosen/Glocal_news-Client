@@ -1,7 +1,7 @@
 import { generateAuthActions } from 'redux-token-auth'
 
 const config = {
-  authUrl: "https://glocal-news.herokuapp.com/api/v1/auth",
+  authUrl: "http://localhost:3002/api/v1/auth",
   userAttributes: {
     uid: 'uid'
   },
@@ -23,3 +23,6 @@ export {
   signOutUser,
   verifyCredentials,
 }
+
+
+// "https://glocal-news.herokuapp.com/api/v1/auth"
