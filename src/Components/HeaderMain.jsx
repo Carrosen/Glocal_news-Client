@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderCategory from './HeaderCategory'
-import { Menu, Header, Select, Container, Divider, Segment, Sticky } from 'semantic-ui-react'
+import { Menu, Header, Select, Container, Divider, Segment, Sticky, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { signOutUser } from '../reduxTokenAuthConfig';
@@ -111,10 +111,10 @@ class HeaderMain extends Component {
             name='logo'
             as={Link}
             to={{ pathname: '/news', state: { activeItem: this.state.activeItem } }}
-            style={{ fontSize: "2em" }}
+            style={{ fontSize: "3em" }}
             onClick={this.handleItemClick}
           >
-            GLOCAL NEWS
+          GL<Icon fitted name='globe' size='tiny'/>CAL NEWS
           </Header>
           <Divider hidden />
         </Container>
