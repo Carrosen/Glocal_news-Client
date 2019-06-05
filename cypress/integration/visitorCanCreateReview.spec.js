@@ -8,8 +8,14 @@ describe('Visitor can', () => {
       status: 200
     })
     cy.route({
+      method: 'GET',
+      url: 'http://localhost:3002/api/v1/categories',
+      response: 'fixture:categories_list.json',
+      status: 200
+    })
+    cy.route({
       method: 'POST',
-      url: 'http://localhost:3002/api/v1/articles/1/reviews',
+      url: 'http://localhost:3002/api/v1/articles/36/reviews',
       response: 'fixture:create_review_success.json',
       status: 200
     })
@@ -24,7 +30,7 @@ describe('Visitor can', () => {
     })
     cy.route({
       method: 'GET',
-      url: 'http://localhost:3002/api/v1/articles/1',
+      url: 'http://localhost:3002/api/v1/articles/36',
       response: 'fixture:one_unpublished_article.json',
       status: 200
     })
@@ -38,13 +44,13 @@ describe('Visitor can', () => {
     cy.get('#login_form_button').click()
     cy.wait(3000)
     cy.get('#review_articles').click()
-    cy.get("#1").click()
+    cy.get("#36").click()
   })
 
   it('see unpublished article when clicked on', () => {
     
 
-    let article = ["#title_1", "#ingress_1", "#body_1", "#photo_1", "#written_1", "#date_1"]
+    let article = ["#title_36", "#ingress_36", "#body_36", "#photo_36", "#written_36", "#date_36"]
 
     article.forEach(element => {
       cy.get(element)
@@ -64,7 +70,7 @@ describe('Visitor can', () => {
     cy.server();
     cy.route({
       method: 'POST',
-      url: 'http://localhost:3002/api/v1/articles/1/reviews',
+      url: 'http://localhost:3002/api/v1/articles/36/reviews',
       response: 'fixture:create_review_no_success.json',
       status: 422
     })

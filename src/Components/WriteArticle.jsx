@@ -103,7 +103,7 @@ class WriteArticle extends Component {
               onChange={this.onChangeHandler}
               placeholder="Ingress"
             />
-            <Form.TextArea
+            <Form.TextArea rows={15}
               id="body"
               required
               value={this.state.body}

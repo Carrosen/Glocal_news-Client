@@ -71,7 +71,7 @@ class FullArticle extends Component {
       <>
         <Container>
           <Grid centered columns={2}>
-            <Grid.Column width={11}>
+            <Grid.Column width={12}>
               {message}
               <Segment padded>
                 <Header id={`title_${this.state.id}`} as="h1">{this.state.title}</Header>
@@ -92,8 +92,10 @@ class FullArticle extends Component {
               </Segment>
               {review_form}
             </Grid.Column>
-            <Grid.Column width={3}>
-
+            <Grid.Column width={4}>
+            <Segment vertical textAlign='center' style={{ background: 'grey', height: '100%' }}>
+                <p>Ads placeholder</p>
+              </Segment>
             </Grid.Column>
           </Grid>
         </Container>

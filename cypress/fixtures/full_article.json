@@ -1,5 +1,5 @@
 {
-  "id": 36,
+  "id": 38,
   "title": "Rainy day",
   "ingress": "Today it rained.",
   "body": "Rain is good for flowers.",
@@ -11,6 +11,6 @@
   "category": {
     "id": 1,
     "name": "Politics",
-  "published": "false"
+  "published": true
   }
 }

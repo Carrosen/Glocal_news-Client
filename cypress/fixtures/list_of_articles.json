@@ -7,7 +7,7 @@
     "written_by": "Boa Matule",
     "image": "https://image.freepik.com/free-photo/sailing-boats-yachts-pier-stockholm-front-city-center_72229-307.jpg",
     "city": "Thessaloniki",
-    "created_at": "2019-05-24T09:56:01.168Z",
+    "created_at": "2019-05-25T09:56:01.168Z",
     "category": {
       "id": 1,
       "name": "Politics"
@@ -34,11 +34,25 @@
     "ingress": "How to spend 24 hours in Rome",
     "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
     "written_by": "George",
-    "created_at": "2019-05-24T09:56:01.168Z",
+    "created_at": "2019-05-26T09:56:01.168Z",
     "image": "https://image.freepik.com/free-photo/roman-coliseum-seen-from-afar_1219-15.jpg",
     "category": {
       "id": 3,
       "name": "Arts"
+    },
+    "published": true
+  },
+  {
+    "id": 39,
+    "title": "A Day in Thessaloniki",
+    "ingress": "How to spend 24 hours in Thessaloniki",
+    "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    "written_by": "George",
+    "created_at": "2019-05-27T09:56:01.168Z",
+    "image": "https://image.freepik.com/free-photo/roman-coliseum-seen-from-afar_1219-15.jpg",
+    "category": {
+      "id": 1,
+      "name": "Politics"
     },
     "published": true
   }

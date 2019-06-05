@@ -22,6 +22,7 @@ describe('Visitor can view unpublished articles', () => {
       cy.get('#password').type('password')
     })
     cy.get('button').click()
+    cy.wait(3000)
   })
 
   it('by seeing a correct page headline', () => {
@@ -48,10 +49,10 @@ describe('Visitor can view unpublished articles', () => {
     cy.route({
       method: 'GET',
       url: 'http://localhost:3002/api/v1/articles/36',
-      response: 'fixture:full_article.json',
+      response: 'fixture:one_unpublished_article.json',
       status: 200
     })
-
+    cy.get('#review_articles').click()
     cy.get("#36").click()
 
     let article = ["#title_36", "#ingress_36", "#body_36", "#photo_36", "#written_36", "#date_36",]

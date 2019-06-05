@@ -18,7 +18,7 @@ describe('Visitor can read an article', () => {
     })
     cy.route({
       method: 'GET',
-      url: 'http://localhost:3002/api/v1/articles/36',
+      url: 'http://localhost:3002/api/v1/articles/38',
       response: 'fixture:full_article.json',
       status: 200
     })
@@ -27,15 +27,15 @@ describe('Visitor can read an article', () => {
 
   it('shows full article when clicked', () => {
     
-    cy.get("#36").click()
+    cy.get("#38").click()
     cy.get('#login-form').within(() => {
       cy.get('#email').type('boa@mail.com')
       cy.get('#password').type('password')
     })
     cy.get('button').click()
-    cy.get("#36").click()
+    cy.get("#38").click()
 
-    let article = ["#title_36", "#ingress_36", "#body_36", "#photo_36", "#written_36", "#date_36",]
+    let article = ["#title_38", "#ingress_38", "#body_38", "#photo_38", "#written_38", "#date_38",]
 
     article.forEach(element => {
       cy.get(element)

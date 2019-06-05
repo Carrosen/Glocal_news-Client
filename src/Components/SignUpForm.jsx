@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Container, Message } from 'semantic-ui-react'
+import { Form, Button, Container, Message, Grid, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { registerUser } from '../reduxTokenAuthConfig'
 
@@ -70,37 +70,44 @@ class SignUpForm extends Component {
 
     return (
       <Container>
-        {message}
-        <Form id="signup-form" onSubmit={this.onSubmit}>
-          <Form.Input
-            required
-            id="email"
-            value={this.state.email}
-            onChange={this.onChangeHandler}
-            placeholder="Email"
-          />
+        <Grid centered columns={2}>
+          <Grid.Column width={12}>
+            {message}
+            <Form id="signup-form" onSubmit={this.onSubmit}>
+              <Form.Input
+                required
+                id="email"
+                value={this.state.email}
+                onChange={this.onChangeHandler}
+                placeholder="Email"
+              />
 
-          <Form.Input
-            required
-            id="password"
-            type="password"
-            value={this.state.password}
-            onChange={this.onChangeHandler}
-            placeholder="Password"
-          />
+              <Form.Input
+                required
+                id="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.onChangeHandler}
+                placeholder="Password"
+              />
 
-          <Form.Input
-            required
-            id="password_confirmation"
-            type="password"
-            value={this.state.password_confirmation}
-            onChange={this.onChangeHandler}
-            placeholder="Password Confirmation"
-          />
-
-          <Button id="sign_up">Sign Up</Button>
-
-        </Form>
+              <Form.Input
+                required
+                id="password_confirmation"
+                type="password"
+                value={this.state.password_confirmation}
+                onChange={this.onChangeHandler}
+                placeholder="Password Confirmation"
+              />
+              <Button id="sign_up">Sign Up</Button>
+            </Form>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Segment vertical textAlign='center' style={{ background: 'grey', height: '100%' }}>
+              <p>Ads placeholder</p>
+            </Segment>
+          </Grid.Column>
+        </Grid>
       </Container>
     )
   }

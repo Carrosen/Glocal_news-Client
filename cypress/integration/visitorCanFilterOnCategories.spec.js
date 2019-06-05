@@ -20,8 +20,7 @@ describe('Visitor can view articles filtered by category', () => {
   it('by seeing correct filtered articles', () => {
 
     let politics = [
-      ["#36", "#title_36", "#ingress_36", "#photo_36"],
-      ["#37", "#title_37", "#ingress_37", "#photo_37"],
+      ["#39", "#title_39", "#ingress_39", "#photo_39"],
     ]
 
     let arts = [
@@ -29,7 +28,9 @@ describe('Visitor can view articles filtered by category', () => {
     ]
 
     cy.get('#politics').click()
-    cy.get('#38').should('not.exist')
+    cy.get('#filtered_articles').within(() => {
+      cy.get('#38').should('not.exist')
+    })
     politics.forEach(article => {
       cy.get(article[0]).within(() => {
         cy.get(article[1]), (article[2])
@@ -38,8 +39,9 @@ describe('Visitor can view articles filtered by category', () => {
     })
 
     cy.get('#arts').click()
-    cy.get('#36').should('not.exist')
-    cy.get('#37').should('not.exist')
+    cy.get('#filtered_articles').within(() => {
+      cy.get('#39').should('not.exist')
+    })
     arts.forEach(article => {
       cy.get(article[0]).within(() => {
         cy.get(article[1]), (article[2])
@@ -48,12 +50,11 @@ describe('Visitor can view articles filtered by category', () => {
     })
   })
   
-  it('by seeing all articles under News tab', () => {
+  it('by seeing all articles under News tab of published', () => {
 
     let news = [
-      ["#36", "#title_36", "#ingress_36", "#photo_36"],
-      ["#37", "#title_37", "#ingress_37", "#photo_37"],
       ["#38", "#title_38", "#ingress_38", "#photo_38"],
+      ["#39", "#title_39", "#ingress_39", "#photo_39"]
     ]
 
     cy.get('#news').click()
@@ -68,9 +69,8 @@ describe('Visitor can view articles filtered by category', () => {
   it('by being redirected to News tab when clicking on GLOCAL NEWS in header', () => {
 
     let news = [
-      ["#36", "#title_36", "#ingress_36", "#photo_36"],
-      ["#37", "#title_37", "#ingress_37", "#photo_37"],
       ["#38", "#title_38", "#ingress_38", "#photo_38"],
+      ["#39", "#title_39", "#ingress_39", "#photo_39"]
     ]
     
     cy.get('#header').within(() => {
