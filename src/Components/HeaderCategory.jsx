@@ -20,7 +20,7 @@ class HeaderCategory extends Component {
     return (
       <>
         <Container id="header_category">
-          <Menu pointing secondary >
+          <Menu pointing secondary style={{background: 'white'}}>
             {this.state.categories.map(c => (
               <Menu.Item
                 style={{ margin: "auto" }}

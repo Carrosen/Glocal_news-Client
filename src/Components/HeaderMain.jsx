@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HeaderCategory from './HeaderCategory'
-import { Menu, Header, Select, Container, Divider, Segment } from 'semantic-ui-react'
+import { Menu, Header, Select, Container, Divider, Segment, Sticky } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { signOutUser } from '../reduxTokenAuthConfig';
@@ -119,45 +119,47 @@ class HeaderMain extends Component {
           <Divider hidden />
         </Container>
 
-        <Container>
-          <Segment inverted
-            style={{ background: '#e0e1e2' }}
-          >
-            <Menu secondary>
-              <Select
-                style={{ border: 'none', margin: '2px' }}
-                placeholder="Select country"
-                selection
-                id="country"
-                options={countryOptions}
-              />
-              <Select
-                style={{ border: 'none', margin: '2px' }}
-                placeholder="Select city"
-                selection
-                id="city_header"
-                options={cityOptions}
-              />
-              {mainLabels.map(m => (
-                <Menu.Item
-                  key={m.name}
-                  name={m.name}
-                  as={Link}
-                  to={m.link}
-                  id={m.id}
+        <Sticky fixed top>
+          <Container>
+            <Segment inverted
+              style={{ background: '#e0e1e2' }}
+            >
+              <Menu secondary>
+                <Select
+                  style={{ border: 'none', margin: '2px' }}
+                  placeholder="Select country"
+                  selection
+                  id="country"
+                  options={countryOptions}
                 />
-              ))}
-              <Menu.Menu position='right'>
-                {labels}
-              </Menu.Menu>
-            </Menu>
-          </Segment>
-        </Container>
+                <Select
+                  style={{ border: 'none', margin: '2px' }}
+                  placeholder="Select city"
+                  selection
+                  id="city_header"
+                  options={cityOptions}
+                />
+                {mainLabels.map(m => (
+                  <Menu.Item
+                    key={m.name}
+                    name={m.name}
+                    as={Link}
+                    to={m.link}
+                    id={m.id}
+                  />
+                ))}
+                <Menu.Menu position='right'>
+                  {labels}
+                </Menu.Menu>
+              </Menu>
+            </Segment>
+          </Container>
 
-        <Container>
-          <HeaderCategory
-            handleItemClick={this.handleItemClick} activeItem={this.state.activeItem} />
-        </Container>
+          <Container>
+            <HeaderCategory
+              handleItemClick={this.handleItemClick} activeItem={this.state.activeItem} />
+          </Container>
+        </Sticky>
       </>
     )
   }
