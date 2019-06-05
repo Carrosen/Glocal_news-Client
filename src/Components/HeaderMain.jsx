@@ -113,16 +113,16 @@ class HeaderMain extends Component {
             to={{ pathname: '/news', state: { activeItem: this.state.activeItem } }}
             onClick={this.handleItemClick}
           >
-          <Divider horizontal
-            color='#2C4138'
-            size='large'
-          >
-            <h1 style={{ color: '#2C4138', fontSize: "3em" }}>
-              GL
+            <Divider horizontal
+              color='#2C4138'
+              size='large'
+            >
+              <h1 style={{ color: '#2C4138', fontSize: "3em" }}>
+                GL
               <Icon fitted name='globe' size='large'
-                style={{ color: '#C2D4CD' }}
-              />
-              CAL NEWS
+                  style={{ color: '#86A499' }}
+                />
+                CAL NEWS
             </h1>
             </Divider>
           </Header>
