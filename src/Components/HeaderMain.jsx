@@ -132,7 +132,7 @@ class HeaderMain extends Component {
         <Sticky fixed top>
           <Container>
             <Segment inverted
-              style={{ background: '#C2D4CD' }}
+              style={{ background: '#e0e1e2' }}
             >
               <Menu secondary>
                 <Select
