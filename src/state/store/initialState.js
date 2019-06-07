@@ -1,4 +1,5 @@
 const initialState = {
+  country: '',
   reduxTokenAuth: {
     currentUser: {
       isLoading: false,
